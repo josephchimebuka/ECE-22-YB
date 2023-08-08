@@ -10,9 +10,14 @@ import slider6 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 4
 import slider7 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 29_portraits.png'
 import slider8 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 27_portraits.png'
 import head from '../assets/23 6.svg'
-import groupPic from '../assets/DYIO3016 2.jpg'
+import maleemoji from '../assets/Male Memojis.svg'
+import groupPic from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/YB ALL.png'
 import Elipse from '../assets/Ellipse 12.svg'
 import arrow from '../assets/ECE 022 YB/Arrows/Arrow Ledft 1 - 24px.svg'
+import Listcards from '../components/Listcards'
+import Arinze from '../assets/fre 1 (1).jpg'
+import Mbachi from '../assets/fre 1 (2).jpg'
+import Ebuka from '../assets/fre 1 (3).jpg'
 
 export default function Home() {
   return (
@@ -29,18 +34,18 @@ export default function Home() {
             <div className='bg-black h-[90vh] relative overflow-hidden'>
               <div className="slanted-bg"></div>
               <div className='flex md:overflow-hidden h-52 gap-10 my-5 -rotate-6 relative top-9'>
-                <Image src={slider1}/>
-                <Image src={slider2}/>
-                <Image src={slider3}/>
-                <Image src={slider4}/>
-                <Image src={slider5}/>
+                <Image src={slider1} alt=''/>
+                <Image src={slider2} alt=''/>
+                <Image src={slider3} alt=''/>
+                <Image src={slider4} alt=''/>
+                <Image src={slider5} alt=''/>
               </div>
               <div className='flex md:overflow-hidden h-52 gap-10 -rotate-6 relative top-20 '>
-                <Image src={slider1}/>
-                <Image src={slider3}/>
-                <Image src={slider5}/>
-                <Image src={slider4}/>
-                <Image src={slider2}/>
+                <Image src={slider1} alt=''/>
+                <Image src={slider3} alt=''/>
+                <Image src={slider5} alt=''/>
+                <Image src={slider4} alt=''/>
+                <Image src={slider2} alt=''/>
               </div>
               <div className='text-container items-center'>
                 <h1 className='text-5xl font-bold leading-1 text-white font-Inter inline-block leading-4'>Graduating ClassYear book!</h1>
@@ -48,14 +53,14 @@ export default function Home() {
               </div>
 
               <div className='absolute z-20 flex items-center justify-center left-[45%]'>
-                <Image className='relative' color='white' src={Elipse}/>
-                <Image className='absolute arrowbtn' src={arrow}/>
+                <Image className='relative' color='white' src={Elipse} alt=''/>
+                <Image className='absolute arrowbtn' src={arrow} alt=''/>
               </div>
             </div>
           </div>
           <section>
               <div className='flex flex-col items-center gap-8'>
-                <Image src={head}/>
+                <Image src={head} alt=''/>
               <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-3xl '>Our story choke oo</h1>
               <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds we've forged, and the friendships that will endure beyond these hallowed halls. <br/>
                         So, join us in celebrating the culmination of our academic journey, our accomplishments, reflect on our growth, and cherish the memories that will forever hold a special place in our hearts. <br/>
@@ -78,7 +83,60 @@ export default function Home() {
             </div>
           </section>
           <section>
-            <Image src={groupPic}/>
+            <Image className='black-and-white' src={groupPic} alt=''/>
+          </section>
+          <section className='bg-[#1E1D22]'>
+            <div className='flex flex-col items-center text-white'>
+                <Image src={maleemoji} alt=''/>
+                <h1 className='font-Inter font-bold text-4xl'>Get to know us for we </h1>
+           <span className='font-Inter text-xl font-normal'>But first, we give honour to whom it is due, meet with our Distinguished classrep and his babe 🤣...</span>
+              <div className='flex gap-10 mt-10'>
+              <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
+              <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
+              </div>
+              <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
+            <div className='flex justify-center items-center gap-10 mt-5 max-w-full'>
+               <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
+                <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
+                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
+                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
+                  
+            </div>
+                  
+            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center border-white w-[200px] bg-white text-black' href={'/'}>See full list here</Link>
+            </div>
+
+            {/* Footer */}
+            <div className='flex px-28 py-14 text-white'>
+              <div className='flex-[30%]'>
+                <h2 className='text-xl mr-10'>Electronic Engineering Department <br /> 022’ class <br /> University of Nigeria Nsukka <br /> Enugu Stateb <br /> Nigeria</h2>
+              </div>
+              <div className='flex flex-[70%] justify-between'>
+                <div className='flex  flex-col gap-2'>
+                  <h3 className='font-semibold'>Class Info</h3>
+                  <Link className='font-light font-Inter' href={'/'}>Our story </Link>
+                  <Link className='font-light font-Inter' href={'/'}>Dey play</Link>
+                  <Link className='font-light font-Inter' href={'/'}>Photos Choke</Link>
+                  <Link className='font-light font-Inter' href={'/'}>Instagram</Link>
+                </div>
+
+                <div className='flex flex-col gap-2'>
+                  <h3 className='font-semibold'>Current Achievements</h3>
+                  <Link className='font-light font-Inter' href={'/'}>Marriages/Children</Link>
+                  <Link className='font-light font-Inter' href={'/'}>Companies</Link>
+                  <Link className='font-light font-Inter' href={'/'}>Awards</Link>
+                </div>
+
+                <div className='flex flex-col gap-2'>
+                  <h3>Contact Us</h3>
+                  <Link className='font-light font-Inter' href={'/'}>Info@ece22.com</Link>
+                  <Link className='font-light font-Inter' href={'/'}>Telp: +234 9030503285</Link>
+                </div>
+              </div>
+            </div>
+
+            <hr />
+            <p className='text-center py-6 text-white'>Made with 💛💛💚💙 </p>
           </section>
     </div>
   )

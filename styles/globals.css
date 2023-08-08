@@ -79,3 +79,12 @@
     transform: translateY(3px);
   }
 }
+
+.black-and-white{
+  filter: grayscale(100%);
+  transition: 2s ease-in-out;
+}
+
+.black-and-white:hover{
+  filter: grayscale(0%);
+}
