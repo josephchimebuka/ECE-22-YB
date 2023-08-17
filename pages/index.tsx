@@ -24,7 +24,6 @@ import Listcards from '../components/Listcards'
 import Arinze from '../assets/fre 1 (1).jpg'
 import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
-import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -127,22 +126,7 @@ export default function Home() {
               <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
               </div>
               <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
-              <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-      className='image-carousel'
-    >
-      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
-      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
-      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
-      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
-      ...
-    </Swiper>
+           
             <div className='image-carousel'>
                <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
                 <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
