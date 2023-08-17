@@ -94,11 +94,11 @@ export default function Home() {
               <div className='flex flex-col items-center gap-8'>
                 <Image src={head} alt=''/>
               <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-3xl '>Our story choke oo</h1>
-              <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds we've forged, and the friendships that will endure beyond these hallowed halls. <br/>
+              <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds weve forged, and the friendships that will endure beyond these hallowed halls. <br/>
                         So, join us in celebrating the culmination of our academic journey, our accomplishments, reflect on our growth, and cherish the memories that will forever hold a special place in our hearts. <br/>
                         Welcome to the UNN hhECE 022’ 
-                        Graduating Class Yearbook website. We're proud of what we've achieved, and we're excited to
-                         share this milestone with you. Here's to the memories we've made and the 
+                        Graduating Class Yearbook website. Were proud of what weve achieved, and were excited to
+                         share this milestone with you. Heres to the memories weve made and the 
                         bright futures that lie ahead!
                         </p>
                         <p ></p>
