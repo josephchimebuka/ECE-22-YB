@@ -88,3 +88,73 @@
 .black-and-white:hover{
   filter: grayscale(0%);
 }
+
+.image-container{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  height: 300px;
+  transform: rotate(-6deg);
+  animation: slider 60s linear infinite, rotate 60s linear infinite;
+}
+
+.image-container2{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  height: 300px;
+  transform: rotate(-6deg);
+  animation: slider2 60s linear infinite, rotate 60s linear infinite;
+}
+ .images{
+  height: 100%;
+  object-fit: contain;
+  margin-right: 20px;
+ }
+
+.image-carousel{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  overflow: hidden;
+}
+
+.imagebox{
+  flex: 1;
+}
+
+@keyframes slider{
+0%{
+  transform: rotate(-6deg) translateX(-100%);
+}
+25%{
+  transform: rotate(-6deg) translateX(-50%);
+}
+50%{
+  transform: rotate(-6deg) translateX(0%);
+}
+75%{
+  transform: rotate(-6deg) translateX(50%);
+}
+100%{
+  transform: rotate(-6deg) translateX(100%);
+}
+}
+
+@keyframes slider2{
+  0%{
+    transform: rotate(-6deg) translateX(100%);
+  }
+  25%{
+    transform: rotate(-6deg) translateX(50%);
+  }
+  50%{
+    transform: rotate(-6deg) translateX(0%);
+  }
+  75%{
+    transform: rotate(-6deg) translateX(-50%);
+  }
+  100%{
+    transform: rotate(-6deg) translateX(-100%);
+  }
+  }

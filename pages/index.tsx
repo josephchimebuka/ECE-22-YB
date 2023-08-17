@@ -9,6 +9,12 @@ import slider5 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 
 import slider6 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 4.png'
 import slider7 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 29_portraits.png'
 import slider8 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 27_portraits.png'
+import slider10 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 10.png'
+import slider11 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 11.png'
+import slider12 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 12.png'
+import slider13 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 13.png'
+import slider14 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 14.png'
+import slider15 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 15.png'
 import head from '../assets/23 6.svg'
 import maleemoji from '../assets/Male Memojis.svg'
 import groupPic from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/YB ALL.png'
@@ -18,6 +24,11 @@ import Listcards from '../components/Listcards'
 import Arinze from '../assets/fre 1 (1).jpg'
 import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 export default function Home() {
   return (
@@ -33,29 +44,50 @@ export default function Home() {
             </div>
             <div className='bg-black h-[90vh] relative overflow-hidden'>
               <div className="slanted-bg"></div>
-              <div className='flex md:overflow-hidden h-52 gap-10 my-5 -rotate-6 relative top-9'>
-                <Image src={slider1} alt=''/>
-                <Image src={slider2} alt=''/>
-                <Image src={slider3} alt=''/>
-                <Image src={slider4} alt=''/>
-                <Image src={slider5} alt=''/>
+              <div className='image-container  my-5 relative top-9'>
+                <Image className='images' src={slider11} alt=''/>
+                <Image className='images' src={slider2} alt=''/>
+                <Image className='images' src={slider13} alt=''/>
+                <Image className='images' src={slider14} alt=''/>
+                <Image className='images' src={slider10} alt=''/>
+                <Image className='images' src={slider6} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider7} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider7} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
               </div>
-              <div className='flex md:overflow-hidden h-52 gap-10 -rotate-6 relative top-20 '>
-                <Image src={slider1} alt=''/>
-                <Image src={slider3} alt=''/>
-                <Image src={slider5} alt=''/>
-                <Image src={slider4} alt=''/>
-                <Image src={slider2} alt=''/>
+              <div className=' image-container2 relative top-20 '>
+              <Image className='images' src={slider1} alt=''/>
+                <Image className='images' src={slider12} alt=''/>
+                <Image className='images' src={slider6} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider10} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider8} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider2} alt=''/>
+                <Image className='images' src={slider8} alt=''/>
+                <Image className='images' src={slider5} alt=''/>
+                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider2} alt=''/>
               </div>
               <div className='text-container items-center'>
                 <h1 className='text-5xl font-bold leading-1 text-white font-Inter inline-block leading-4'>Graduating ClassYear book!</h1>
                 <h1 className='text-white font-times italic text-center text-5xl  mt-4'>UNN ECE Class 2022</h1>
-              </div>
-
-              <div className='absolute z-20 flex items-center justify-center left-[45%]'>
+                <div className='absolute z-20 flex items-center justify-center left-[40%] mt-20'>
                 <Image className='relative' color='white' src={Elipse} alt=''/>
                 <Image className='absolute arrowbtn' src={arrow} alt=''/>
               </div>
+              </div>
+
+            
             </div>
           </div>
           <section>
@@ -85,7 +117,7 @@ export default function Home() {
           <section>
             <Image className='black-and-white' src={groupPic} alt=''/>
           </section>
-          <section className='bg-[#1E1D22]'>
+          <section className='bg-[#1E1D22] overflow-hidden'>
             <div className='flex flex-col items-center text-white'>
                 <Image src={maleemoji} alt=''/>
                 <h1 className='font-Inter font-bold text-4xl'>Get to know us for we </h1>
@@ -95,9 +127,29 @@ export default function Home() {
               <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
               </div>
               <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
-            <div className='flex justify-center items-center gap-10 mt-5 max-w-full'>
+              <Swiper
+      spaceBetween={50}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+      className='image-carousel'
+    >
+      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
+      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
+      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
+      <SwiperSlide><Listcards image={Ebuka} name='Arinze' nickname={'001'}/> </SwiperSlide>
+      ...
+    </Swiper>
+            <div className='image-carousel'>
                <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
                 <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
+                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
+                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
+                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
+                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
                  <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
                   <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
                   

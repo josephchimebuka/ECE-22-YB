@@ -8,8 +8,8 @@ interface props{
 }
 const Listcards = (props: props) => {
   return (
-    <div className='w-[250px] h-[281px] border-black'>
-        <Image src={props.image}  alt=''/>
+    <div className='h-[350px] w-[250px]'>
+        <Image  src={props.image}  alt=''/>
         <div className='bg-white text-black flex flex-col items-center'>
             <h3 className='font-bold font-Inter'>{props.name}</h3>
             <p className='italic font-thin'>{props.nickname}</p>
