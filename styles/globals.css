@@ -82,7 +82,7 @@
 
 .black-and-white{
   filter: grayscale(100%);
-  transition: 2s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .black-and-white:hover{
