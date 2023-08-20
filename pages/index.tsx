@@ -1,3 +1,5 @@
+'use client'
+
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -15,7 +17,6 @@ import slider12 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 
 import slider13 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 13.png'
 import slider14 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 14.png'
 import slider15 from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/IONO 15.png'
-import head from '../assets/23 6.svg'
 import maleemoji from '../assets/Male Memojis.svg'
 import groupPic from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/YB ALL.png'
 import Elipse from '../assets/Ellipse 12.svg'
@@ -24,18 +25,35 @@ import Listcards from '../components/Listcards'
 import Arinze from '../assets/fre 1 (1).jpg'
 import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
+import QuoteCard from '../components/QuoteCard'
+import Ourstory from '../components/Ourstory'
+import Multicarousel from '../components/Multicarousel'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import 'swiper/css';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-export default function Home() {
+
+interface HomeProps{
+  imageGroups: string[][]
+}
+const Home: React.FC<HomeProps> =()=> {
+    const imageGroups=[
+      [Arinze, Ebuka, Mbachi, Arinze],
+      [Arinze, Ebuka, Mbachi, Arinze],
+      [Arinze, Ebuka, Mbachi, Arinze],
+      [Arinze, Ebuka, Mbachi, Arinze],
+    ]
+
   return (
     //Landing page
     <div>
           <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full'>
             <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
-              <Link href={'/'}>About</Link>
+              <Link href={'/about'}>About</Link>
               <Link href={'/'}>Class list</Link>
               <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
               <Link href={'/'}>Gallery</Link>
@@ -57,7 +75,7 @@ export default function Home() {
                 <Image className='images' src={slider5} alt=''/>
                 <Image className='images' src={slider7} alt=''/>
                 <Image className='images' src={slider5} alt=''/>
-                <Image className='images' src={slider4} alt=''/>
+                <Image className='images' src={slider3} alt=''/>
                 <Image className='images' src={slider5} alt=''/>
               </div>
               <div className=' image-container2 relative top-20 '>
@@ -75,7 +93,7 @@ export default function Home() {
                 <Image className='images' src={slider8} alt=''/>
                 <Image className='images' src={slider5} alt=''/>
                 <Image className='images' src={slider4} alt=''/>
-                <Image className='images' src={slider2} alt=''/>
+                <Image className='images' src={slider15} alt=''/>
               </div>
               <div className='text-container items-center'>
                 <h1 className='text-5xl font-bold leading-1 text-white font-Inter inline-block leading-4'>Graduating ClassYear book!</h1>
@@ -89,21 +107,7 @@ export default function Home() {
             
             </div>
           </div>
-          <section>
-              <div className='flex flex-col items-center gap-8'>
-                <Image src={head} alt=''/>
-              <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-3xl '>Our story choke oo</h1>
-              <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds weve forged, and the friendships that will endure beyond these hallowed halls. <br/>
-                        So, join us in celebrating the culmination of our academic journey, our accomplishments, reflect on our growth, and cherish the memories that will forever hold a special place in our hearts. <br/>
-                        Welcome to the UNN hhECE 022’ 
-                        Graduating Class Yearbook website. Were proud of what weve achieved, and were excited to
-                         share this milestone with you. Heres to the memories weve made and the 
-                        bright futures that lie ahead!
-                        </p>
-                        <p ></p>
-                        <Link className='font-bold underline mb-5' href={'/'}>See full story here</Link>
-              </div>
-          </section>
+          <Ourstory/>
           <section className='bg-[#1E1D22]'>
             <div className='flex flex-col items-center gap-[20px] py-10'>
             <h1 className='text-center font-Inter text-4xl font-extrabold text-white'>Things dey sup...</h1>
@@ -116,8 +120,37 @@ export default function Home() {
           <section>
             <Image className='black-and-white' src={groupPic} alt=''/>
           </section>
+          <section>
+          <div>
+          <Swiper
+      // install Swiper modules
+      modules={[Navigation, Pagination, Scrollbar, A11y]}
+      spaceBetween={30}
+      slidesPerView={3}
+      navigation
+      pagination={{ clickable: true }}
+      scrollbar={{ draggable: true }}
+      onSwiper={(swiper) => console.log(swiper)}
+      onSlideChange={() => console.log('slide change')}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide> 
+       <SwiperSlide>Slide 3</SwiperSlide>
+      <SwiperSlide>Slide 4</SwiperSlide>
+      ...
+    </Swiper>
+            </div>
+          </section>
           <section className='bg-[#1E1D22] overflow-hidden'>
             <div className='flex flex-col items-center text-white'>
+            <div className='p-5 flex gap-5 mt-5'>
+              <QuoteCard/>
+              <QuoteCard/>
+              <QuoteCard/>
+            </div>
+            
                 <Image src={maleemoji} alt=''/>
                 <h1 className='font-Inter font-bold text-4xl'>Get to know us for we </h1>
            <span className='font-Inter text-xl font-normal'>But first, we give honour to whom it is due, meet with our Distinguished classrep and his babe 🤣...</span>
@@ -138,8 +171,12 @@ export default function Home() {
                   <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
                   
             </div>
+            <div className='image-carousel'>
+            <Multicarousel imageGroups={imageGroups}/>
+            
+            </div>
                   
-            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center border-white w-[200px] bg-white text-black' href={'/'}>See full list here</Link>
+            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center w-[200px] bg-white text-black hover:bg-transparent hover:text-white hover:border-white' href={'/'}>See full list here</Link>
             </div>
 
             {/* Footer */}
@@ -163,7 +200,7 @@ export default function Home() {
                   <Link className='font-light font-Inter' href={'/'}>Awards</Link>
                 </div>
 
-                <div className='flex flex-col gap-2'>
+                <div className='flex flex-col gap-2 '>
                   <h3>Contact Us</h3>
                   <Link className='font-light font-Inter' href={'/'}>Info@ece22.com</Link>
                   <Link className='font-light font-Inter' href={'/'}>Telp: +234 9030503285</Link>
@@ -177,3 +214,5 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home

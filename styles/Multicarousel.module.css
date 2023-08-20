@@ -1,0 +1,44 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    position: relative;
+  }
+  
+  .carouselInner {
+    display: flex;
+    transition: transform 3s ease-in-out;
+    width: 100%;
+    position: relative;
+  }
+  
+  .imageGroup {
+    display: flex;
+  }
+  
+  .carouselImage {
+    max-width: 100px; /* Adjust image width as needed */
+    height: auto;
+  }
+  
+ .caseNavigation{
+    position: absolute;
+    top: 50px;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 6;
+ }
+  .prevBtn,
+  .nextBtn{
+    background: rgba(0,0,0,0.4);
+    height: 72px;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    cursor: pointer;
+  }
