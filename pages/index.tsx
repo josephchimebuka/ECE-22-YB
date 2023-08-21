@@ -27,25 +27,33 @@ import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
 import QuoteCard from '../components/QuoteCard'
 import Ourstory from '../components/Ourstory'
-import Multicarousel from '../components/Multicarousel'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-import 'swiper/css';
+import { Pagination, Scrollbar, A11y } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import SwiperCore, {Navigation} from 'swiper'
 
 
 interface HomeProps{
   imageGroups: string[][]
+  
 }
+
+SwiperCore.use([Navigation]);
 const Home: React.FC<HomeProps> =()=> {
-    const imageGroups=[
-      [Arinze, Ebuka, Mbachi, Arinze],
-      [Arinze, Ebuka, Mbachi, Arinze],
-      [Arinze, Ebuka, Mbachi, Arinze],
-      [Arinze, Ebuka, Mbachi, Arinze],
+    const gallery=[
+     {id:1, image: Arinze},
+     {id:2, image: Mbachi},
+     {id:3, image: Ebuka},
+     {id:4, image: Arinze},
+     {id:5, image: Mbachi},
+     {id:6, image: Arinze},
+     {id:7, image: Mbachi},
+     {id:8, image: Arinze},
+     {id:9, image: Mbachi},
+     {id:10, image: Arinze}
     ]
 
   return (
@@ -78,7 +86,7 @@ const Home: React.FC<HomeProps> =()=> {
                 <Image className='images' src={slider3} alt=''/>
                 <Image className='images' src={slider5} alt=''/>
               </div>
-              <div className=' image-container2 relative top-20 '>
+              <div className='image-container2 md:relative md:top-20 '>
               <Image className='images' src={slider1} alt=''/>
                 <Image className='images' src={slider12} alt=''/>
                 <Image className='images' src={slider6} alt=''/>
@@ -95,10 +103,10 @@ const Home: React.FC<HomeProps> =()=> {
                 <Image className='images' src={slider4} alt=''/>
                 <Image className='images' src={slider15} alt=''/>
               </div>
-              <div className='text-container items-center'>
-                <h1 className='text-5xl font-bold leading-1 text-white font-Inter inline-block leading-4'>Graduating ClassYear book!</h1>
-                <h1 className='text-white font-times italic text-center text-5xl  mt-4'>UNN ECE Class 2022</h1>
-                <div className='absolute z-20 flex items-center justify-center left-[40%] mt-20'>
+              <div className='text-container  items-center gap-10'>
+                <h1 className='md:text-5xl text-4xl  flex flex-col md:flex-row items-center gap-5 md:leading-5 font-bold leading-1 text-white font-Inter leading-4'><p>Graduating</p> <p> ClassYear book!</p></h1>
+                <h1 className='text-white font-times italic text-center text-3xl md:text-5xl mt-8  md:mt-4'>UNN ECE Class 2022</h1>
+                <div className='absolute z-20 flex items-center justify-center left-[35%] md:left-[40%] mt-20'>
                 <Image className='relative' color='white' src={Elipse} alt=''/>
                 <Image className='absolute arrowbtn' src={arrow} alt=''/>
               </div>
@@ -111,7 +119,7 @@ const Home: React.FC<HomeProps> =()=> {
           <section className='bg-[#1E1D22]'>
             <div className='flex flex-col items-center gap-[20px] py-10'>
             <h1 className='text-center font-Inter text-4xl font-extrabold text-white'>Things dey sup...</h1>
-            <p className='text-justify text-[18px] font-Inter w-2/3  text-white'>This digital yearbook is meticulously crafted
+            <p className='text-justify text-[18px] font-Inter px-10 md:w-2/3  text-white'>This digital yearbook is meticulously crafted
              to reflect the spirit and diversity of our class. Flip through its virtual pages to relive the highlights 
              of our UNN days, from the first day we nervously stepped through Peace park Nsukka 
             to the unforgettable adventures we embarked upon.</p>
@@ -122,25 +130,8 @@ const Home: React.FC<HomeProps> =()=> {
           </section>
           <section>
           <div>
-          <Swiper
-      // install Swiper modules
-      modules={[Navigation, Pagination, Scrollbar, A11y]}
-      spaceBetween={30}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide> 
-       <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      ...
-    </Swiper>
+        
+
             </div>
           </section>
           <section className='bg-[#1E1D22] overflow-hidden'>
@@ -160,29 +151,46 @@ const Home: React.FC<HomeProps> =()=> {
               </div>
               <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
            
-            <div className='image-carousel'>
-               <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
-                <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
-                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
-                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
-                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
-                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
-                 <Listcards image={Mbachi} name='Arinze' nickname={'001'}/> 
-                  <Listcards image={Ebuka} name='Arinze' nickname={'001'}/> 
-                  
-            </div>
-            <div className='image-carousel'>
-            <Multicarousel imageGroups={imageGroups}/>
-            
-            </div>
-                  
+         <div className='max-w-full mt-12 lg:mt-8 mx-auto relative lg:pb-2'>
+         <Swiper
+     modules={[ Pagination, Scrollbar, A11y]}
+     spaceBetween={10}
+     slidesPerView={5}
+     navigation={{prevEl: '.swiper-button-prev' , nextEl: '.swiper-button-next'}}
+     pagination={{ clickable: true }}
+     onSwiper={(swiper) => console.log(swiper)}
+     onSlideChange={() => console.log('slide change')}
+      
+    >{
+      gallery.map((item)=>(
+       <SwiperSlide 
+       key={item.id}
+       className="">
+          <div className='h-[350px] w-[250px]'>
+        <Image  src={item.image}  alt=''/>
+        <div className='bg-white text-black flex flex-col items-center'>
+            <h3 className='font-bold font-Inter'>name</h3>
+            <p className='italic font-thin'>Nickname</p>
+        </div>
+    </div>
+       </SwiperSlide>
+      ))
+    }
+    
+      <div className='swiper-button-prev'></div>
+      <div className='swiper-button-next'></div>
+    </Swiper>
+         </div>
+           
+              
+             
             <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center w-[200px] bg-white text-black hover:bg-transparent hover:text-white hover:border-white' href={'/'}>See full list here</Link>
             </div>
 
             {/* Footer */}
-            <div className='flex px-28 py-14 text-white'>
+            <div className='md:flex md:flex-row px-10 md:px-28 py-14 text-white'>
               <div className='flex-[30%]'>
-                <h2 className='text-xl mr-10'>Electronic Engineering Department <br /> 022’ class <br /> University of Nigeria Nsukka <br /> Enugu Stateb <br /> Nigeria</h2>
+                <h2 className='text-xl mr-10 mb-5'>Electronic Engineering Department <br /> 022’ class <br /> University of Nigeria Nsukka <br /> Enugu State <br /> Nigeria</h2>
               </div>
               <div className='flex flex-[70%] justify-between'>
                 <div className='flex  flex-col gap-2'>

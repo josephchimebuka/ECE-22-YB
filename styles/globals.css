@@ -99,12 +99,18 @@
 }
 
 .image-container2{
-  display: flex;
+  display: none;
   width: 100%;
   flex-wrap: nowrap;
   height: 300px;
   transform: rotate(-6deg);
   animation: slider2 60s linear infinite, rotate 60s linear infinite;
+}
+
+@media (min-width: 768px){
+  .image-container2{
+    display: flex;
+  }
 }
  .images{
   height: 100%;

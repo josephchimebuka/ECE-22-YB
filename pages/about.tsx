@@ -29,6 +29,10 @@ const about = () => {
                         <Link className='font-bold underline mb-5' href={'/'}>See full story here</Link>
               </div>
           </section>
+
+          <section className='bg-[#1E1D22]'>
+              <h2>It all began when UNN released it's admission</h2>
+          </section>
     </div>
   )
 }
