@@ -42,6 +42,9 @@ interface HomeProps{
 }
 
 const Home: React.FC<HomeProps> =()=> {
+
+
+
     const gallery=[
      {id:1, image: Arinze},
      {id:2, image: Mbachi},
@@ -61,7 +64,7 @@ const Home: React.FC<HomeProps> =()=> {
           <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full'>
             <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
               <Link href={'/about'}>About</Link>
-              <Link href={'/'}>Class list</Link>
+              <Link href={'/classlist'}>Class list</Link>
               <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
               <Link href={'/'}>Gallery</Link>
               <Link href={'/'}>Trivia</Link>
@@ -182,7 +185,7 @@ const Home: React.FC<HomeProps> =()=> {
            
               
              
-            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center w-[200px] bg-white text-black hover:bg-transparent hover:text-white hover:border-white' href={'/'}>See full list here</Link>
+            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center w-[200px] bg-white text-black hover:bg-transparent hover:text-white hover:border-white' href={'/classlist'}>See full list here</Link>
             </div>
 
          <Footer/>

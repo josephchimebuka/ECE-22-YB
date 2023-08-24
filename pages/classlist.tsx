@@ -1,13 +1,99 @@
-import React from 'react'
+import React, { useState } from 'react'
+import maleemoji from '../assets/Male Memojis.svg'
+import Image from 'next/image'
+import Link from 'next/link'
+import Footer from '../components/Footer'
 
-const classlist = () => {
+import Arinze from '../assets/fre 1 (1).jpg'
+import Mbachi from '../assets/fre 1 (2).jpg'
+import Ebuka from '../assets/fre 1 (3).jpg'
+
+const Classlist = () => {
+  const[page, setpage] = useState(1)
+  const gallery=[{id:1, image: Arinze},{id:2, image: Arinze},{id:3, image:Arinze},{id:4, image: Arinze},{id:5, image: Arinze},
+    {id:6, image: Arinze},{id:7, image: Arinze}, {id:8, image: Arinze},{id:9, image: Arinze},
+    {id:10, image: Ebuka},{id:11, image: Ebuka},{id:12, image: Ebuka},{id:13, image: Ebuka},{id:14, image: Ebuka},
+    {id:15, image: Ebuka},{id:16, image: Ebuka},{id:17, image: Ebuka},{id:18, image: Ebuka},{id:19, image: Ebuka},{id:20, image: Ebuka},
+    {id:21, image: Mbachi},{id:22, image: Mbachi},{id:23, image:Mbachi},{id:24, image: Mbachi},{id:25, image: Mbachi},
+    {id:26, image: Mbachi},{id:27, image: Mbachi},{id:28, image: Mbachi},{id:29, image: Mbachi},{id:30, image: Mbachi}
+   ]
+
+   const scrollTotop=()=>{
+    window.scrollTo({
+      top: 20,
+      behavior: 'smooth'
+    })
+   }
+
+   const setPagehandler=(selectedpage:any)=>{
+    setpage(selectedpage)
+    scrollTotop()
+   }
+
+  
   return (
-    <div>
-        <section className='bg-[#1E1D22]'>
-            
+        <section className='bg-[#1E1D22] '>
+             <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
+              <Link href={'/about'}>About</Link>
+              <Link href={'/classlist'}>Class list</Link>
+              <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
+              <Link href={'/'}>Gallery</Link>
+              <Link href={'/'}>Trivia</Link>
+            </div>
+            <div className='flex flex-col items-center text-white'>
+
+            <Image src={maleemoji} alt='ggh'/>
+                <h1 className='font-Inter font-bold text-4xl text-white'>Get to know us for we </h1>
+                <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
+                <div className="search-container">
+        <input type="text" className="search-input" placeholder="Search"/>
+        <button className="search-button">Search</button>
+     
+            </div>
+            <div className='flex gap-2'>
+          {
+        ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((item)=>(
+          <button
+          key={item}
+          className='navigate-button'
+          >
+                {item}
+          </button>
+        ))
+
+          }
+        </div>
+        <p className='search-text'>showing results for letter “A”</p>
+            <div className='gallery'>
+                {
+                  gallery.slice(page*10-10, page*10-1).map((item)=>(
+                    <div className='h-[280px] w-[250px]' key={item.id}>
+                    <Image   src={item.image}  alt=''/>
+                    <div className='bg-white text-black flex flex-col items-center'>
+                        <h3 className='font-bold font-Inter'>name</h3>
+                        <p className='italic font-thin'>Nickname</p>
+                    </div>
+                </div>
+                  ))
+                }
+            </div>
+            {
+              gallery.length > 0 && <div className='flex gap-2'>
+                {
+                  [...Array(gallery.length/10)].map((_,i)=>{
+
+                    return <span className={page === i+1 ? "navigate-button__selected": "navigate-button"} key={i} onClick={()=> setPagehandler(i+1)}>{i+1}</span>
+                  }
+                  )
+                }
+              </div>
+            }
+        <Footer/>
+            </div>
+
+      
         </section>
-    </div>
   )
 }
 
-export default classlist
+export default Classlist
