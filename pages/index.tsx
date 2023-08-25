@@ -34,6 +34,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import TheHeader from '../components/TheHeader'
 
 
 interface HomeProps{
@@ -62,13 +63,7 @@ const Home: React.FC<HomeProps> =()=> {
     //Landing page
     <div>
           <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full'>
-            <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
-              <Link href={'/about'}>About</Link>
-              <Link href={'/classlist'}>Class list</Link>
-              <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
-              <Link href={'/'}>Gallery</Link>
-              <Link href={'/'}>Trivia</Link>
-            </div>
+              <TheHeader/>
             <div className='bg-black h-[90vh] relative overflow-hidden'>
               <div className="slanted-bg"></div>
               <div className='image-container  my-5 relative top-9'>

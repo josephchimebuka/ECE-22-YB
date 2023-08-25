@@ -43,7 +43,7 @@ const about = () => {
 <section>
               <div className='flex flex-col items-center gap-8'>
                 <Image src={head} alt=''/>
-              <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-3xl '>Our story choke oo</h1>
+              <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-4xl italic'>Our story choke oo</h1>
               <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds weve forged, and the friendships that will endure beyond these hallowed halls. <br/>
                         So, join us in celebrating the culmination of our academic journey, our accomplishments, reflect on our growth, and cherish the memories that will forever hold a special place in our hearts. <br/>
                         Welcome to the UNN hhECE 022’ 
