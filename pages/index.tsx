@@ -100,10 +100,10 @@ const Home: React.FC<HomeProps> =()=> {
                 <Image className='images' src={slider4} alt=''/>
                 <Image className='images' src={slider15} alt=''/>
               </div>
-              <div className='text-container  items-center gap-10'>
-                <h1 className='md:text-5xl text-4xl  flex flex-col md:flex-row items-center gap-5 md:leading-5 font-bold leading-1 text-white font-Inter leading-4'><p>Graduating</p> <p> ClassYear book!</p></h1>
+              <div className='text-container  items-center gap-10 w-full'>
+                <h1 className='md:text-5xl text-4xl  flex flex-col w-full md:flex-row items-center gap-5 md:leading-5 font-bold leading-1 text-white font-Inter leading-4'><p>Graduating</p> <p className='inline-block'> ClassYear book!</p></h1>
                 <h1 className='text-white font-times italic text-center text-3xl md:text-5xl mt-8  md:mt-4'>UNN ECE Class 2022</h1>
-                <div className='absolute z-20 flex items-center justify-center left-[35%] md:left-[40%] mt-20'>
+                <div className='absolute z-20 flex items-center justify-center left-[40%] md:left-[40%] mt-20'>
                 <Image className='relative' color='white' src={Elipse} alt=''/>
                 <Image className='absolute arrowbtn' src={arrow} alt=''/>
               </div>
@@ -180,7 +180,7 @@ const Home: React.FC<HomeProps> =()=> {
            
               
              
-            <Link className='py-3 px-5 mt-10 border-none rounded-3xl font-semibold text-center w-[200px] bg-white text-black hover:bg-transparent hover:text-white hover:border-white' href={'/classlist'}>See full list here</Link>
+            <Link className='py-3 px-5 mt-10  rounded-3xl font-semibold text-center w-[200px]  hover:bg-transparent hover:text-white  border' href={'/classlist'}>See full list here</Link>
             </div>
 
          <Footer/>

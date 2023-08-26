@@ -261,3 +261,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     margin-top: 50px;
   }
+
+  .border{
+    border: none;
+    background: white;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  .border:hover{
+    border: 1px solid white;
+  }
