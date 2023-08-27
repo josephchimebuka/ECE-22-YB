@@ -272,3 +272,56 @@
   .border:hover{
     border: 1px solid white;
   }
+
+  .input-container {
+    position: relative;
+    display: inline-block;
+    margin: 20px auto;
+  }
+  
+  .transparent-input {
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 5px;
+    background-color: transparent;
+    color: #D2D2D2;
+  }
+
+  /* border-bottom: 1px solid #D2D2D2; */
+  
+  .transparent-input::placeholder {
+    color: #D2D2D2; /* Placeholder text color */
+    opacity: 0.5;
+  }
+  
+  .search-button {
+    background-color: transparent;
+    color: #D2D2D2;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  /* Line beneath the input and button */
+  .input-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust this value for the desired distance from the input/button */
+    width: calc(100% + 24px); /* Adjust this value to extend the line */
+    border-bottom: 1px solid #D2D2D2; /* White line beneath the input/button */
+    z-index: -1;
+  }
+  
+  /* Line disappears when input is focused */
+  .transparent-input:focus + .search-button::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Same value as .input-container::after */
+    width: calc(100% + 24px); /* Same value as .input-container::after */
+    border-bottom: none;
+  }
+  

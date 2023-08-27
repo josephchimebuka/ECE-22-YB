@@ -32,7 +32,7 @@ const Classlist = () => {
 
   
   return (
-        <section className='bg-[#1E1D22]'>
+        <div className='bg-[#1E1D22]'>
              <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
               <Link href={'/about'}>About</Link>
               <Link href={'/classlist'}>Class list</Link>
@@ -45,11 +45,7 @@ const Classlist = () => {
             <Image src={maleemoji} alt='ggh'/>
                 <h1 className='font-Inter font-bold text-4xl text-white'>Get to know us for we </h1>
                 <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
-                <div className="search-container">
-        <input type="text" className="search-input" placeholder="Search"/>
-        <button className="search-button">Search</button>
-     
-            </div>
+                
             <div className='flex gap-2 invisible sm:visible'>
           {
         ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((item)=>(
@@ -88,11 +84,11 @@ const Classlist = () => {
                 }
               </div>
             }
-        <Footer/>
+      
             </div>
 
-      
-        </section>
+            <Footer/>
+        </div>
   )
 }
 
