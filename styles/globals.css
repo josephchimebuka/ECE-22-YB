@@ -262,6 +262,12 @@
     margin-top: 50px;
   }
 
+  @media (max-width: 768px){
+    .gallery{
+      display: flex;
+      flex-direction: column;
+    }
+  }
   .border{
     border: none;
     background: white;
@@ -325,3 +331,12 @@
     border-bottom: none;
   }
   
+  .fadeInText {
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out; /* Add transform transition */
+  }
+
+  .fadeInText2 {
+    opacity: 0;
+    transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out; /* Add transform transition */
+  }

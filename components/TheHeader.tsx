@@ -6,7 +6,7 @@ import Search from '..//assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/materi
 import close from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/icons8-close-50.png'
 
 const TheHeader = () => {
-  const [menuState, setMenuState] = useState(true)
+  const [menuState, setMenuState] = useState(false)
   return (
     <div>
  <div className='bg-[#1E1D22]  py-6'>
@@ -40,16 +40,16 @@ const TheHeader = () => {
               <div className="w-6 h-6 cursor-pointer" onClick={()=> setMenuState(false)}><Image src={close} alt=''/></div>
           </div>
             
-            <Link legacyBehavior href={"/insights"}>
+            <Link legacyBehavior href={"/about"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">About</a>
             </Link>
-            <Link legacyBehavior href={"/invest"}>
+            <Link legacyBehavior href={"/classlist"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">Classlist</a>
             </Link>
-            <Link legacyBehavior href={"/aboutus"}>
+            <Link legacyBehavior href={"/gallery"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">Gallery</a>
             </Link>
-            <Link legacyBehavior href={"/insights"}>
+            <Link legacyBehavior href={"/trivia"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">Trivia</a>
             </Link>
             <div className="input-container">

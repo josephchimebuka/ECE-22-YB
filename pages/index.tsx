@@ -35,6 +35,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import TheHeader from '../components/TheHeader'
+import { useEffect, useRef } from 'react'
 
 
 interface HomeProps{
@@ -43,8 +44,31 @@ interface HomeProps{
 }
 
 const Home: React.FC<HomeProps> =()=> {
+  const textRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (textRef.current) {
+            textRef.current.style.opacity = '1';
+            textRef.current.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
 
+    if (textRef.current) {
+      textRef.current.style.transform = 'translateY(100px)'; // Initial slide-down effect
+      observer.observe(textRef.current);
+    }
 
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
 
     const gallery=[
      {id:1, image: Arinze},
@@ -113,8 +137,8 @@ const Home: React.FC<HomeProps> =()=> {
             </div>
           </div>
           <Ourstory/>
-          <section className='bg-[#1E1D22]'>
-            <div className='flex flex-col items-center gap-[20px] py-10'>
+          <section className='bg-[#1E1D22] fadeInText' ref={textRef}>
+            <div className='flex flex-col items-center gap-[20px] py-10 leading-1 px-10' ref={textRef}>
             <h1 className='text-center font-Inter text-4xl font-extrabold text-white'>Things dey sup...</h1>
             <p className='text-justify text-[18px] font-Inter px-10 md:w-2/3  text-white'>This digital yearbook is meticulously crafted
              to reflect the spirit and diversity of our class. Flip through its virtual pages to relive the highlights 

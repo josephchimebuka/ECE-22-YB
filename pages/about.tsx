@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import head from '../assets/23 6.svg'
 import Link from 'next/link'
@@ -13,9 +13,36 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Footer from '../components/Footer'
+import Ourstory from '../components/Ourstory'
+import TheHeader from '../components/TheHeader'
 
 
-const about = () => {
+const About = () => {
+  const textRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (textRef.current) {
+            textRef.current.style.opacity = '1';
+            textRef.current.style.transform = 'translateY(0)';
+            observer.unobserve(entry.target);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (textRef.current) {
+      textRef.current.style.transform = 'translateY(100px)'; // Initial slide-down effect
+      observer.observe(textRef.current);
+    }
+
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, []);
   const Firstyear=[
     {id:1, image: pics1},
     {id:2, image: pics2},
@@ -32,38 +59,23 @@ const about = () => {
 
   return (
     <div>
-          <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
-              <Link href={'/about'}>About</Link>
-              <Link href={'/'}>Class list</Link>
-              <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
-              <Link href={'/'}>Gallery</Link>
-              <Link href={'/'}>Trivia</Link>
-            </div>
+       <TheHeader/>
 
 <section>
-              <div className='flex flex-col items-center gap-8'>
-                <Image src={head} alt=''/>
-              <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-4xl italic'>Our story choke oo</h1>
-              <p className='font-Inter font-normal text-[16px] text-color w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds weve forged, and the friendships that will endure beyond these hallowed halls. <br/>
-                        So, join us in celebrating the culmination of our academic journey, our accomplishments, reflect on our growth, and cherish the memories that will forever hold a special place in our hearts. <br/>
-                        Welcome to the UNN hhECE 022’ 
-                        Graduating Class Yearbook website. Were proud of what weve achieved, and were excited to
-                         share this milestone with you. Heres to the memories weve made and the 
-                        bright futures that lie ahead!
-                        </p>
-                        <p ></p>
-                        <Link className='font-bold underline mb-5' href={'/'}>See full story here</Link>
-              </div>
+             <Ourstory/>
           </section>
 
           <section className='bg-[#1E1D22]'>
-             <div className='flex flex-col items-center md:py-10 md:gap-10'>
-             <p className='font-Inter text-white text-[46px] items-center font-bold leading-10 text-center'>It all began on October the 12th, 2017 when UNN <br /> released her 2017/18 Merit Admission list...</p>
-              <p className='font-Inter font-normal text-[16px]  text-white'>Smart guys like Ame, Obiechina, Ifesinachi, Lawrence , etc were topping the list that year.... God when?  </p>
+            <div className='fadeInText' ref={textRef} >
+
+             <div className='flex flex-col items-center md:py-10 md:gap-10 p-10'>
+             <p className='font-Inter text-white text-3xl  md:text-[46px] items-center font-bold leading-10 mb-5 text-center fadeInText' ref={textRef}>It all began on October the 12th, 2017 when UNN released her 2017/18 Merit Admission list...</p>
+              <p className='font-Inter font-normal text-[16px]  text-white mb-5 text-justify align-middle'>Smart guys like Ame, Obiechina, Ifesinachi, Lawrence , etc were topping the list that year.... God when?  </p>
               <Image src={List} alt=''/>
-              <p className='font-Inter text-white text-[46px] items-center font-bold leading-10'>Then the battle began ...</p>
-             
+              <p className='font-Inter text-white text-3xl md:text-[46px] items-center font-bold leading-10 mb-5'>Then the battle began ...</p>
+              <p className='font-Inter font-normal text-[16px]  text-white mb-5 text-justify align-middle'>Smart guys like Ame, Obiechina, Ifesinachi, Lawrence , etc were topping the list that year.... God when?  </p>
              </div>
+            </div>
 
              <div className='max-w-full mt-12 lg:mt-8 mx-auto relative lg:pb-2'>
               <Swiper
@@ -91,7 +103,7 @@ const about = () => {
     </Swiper>
               </div>
                 <div className='text-center gap-10 flex flex-col mt-10 mb-14'>
-                <p className='font-Inter text-white text-[46px] items-center font-bold leading-10 text-center'>10th February, 2018 ... we Matriculated</p>
+                <p className='font-Inter text-white text-3xl md:text-[46px] items-center font-bold leading-10 text-center'>10th February, 2018 ... we Matriculated</p>
               <p className='font-Inter font-normal text-[16px]  text-white text-center'>Smart guys like Ame, Obiechina, Ifesinachi, Lawrence , etc were topping the list that year.... God when?  </p>
 
                 </div>
@@ -128,4 +140,4 @@ const about = () => {
   )
 }
 
-export default about
+export default About

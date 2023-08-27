@@ -7,6 +7,7 @@ import Footer from '../components/Footer'
 import Arinze from '../assets/fre 1 (1).jpg'
 import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
+import TheHeader from '../components/TheHeader'
 
 const Classlist = () => {
   const[page, setpage] = useState(1)
@@ -32,21 +33,17 @@ const Classlist = () => {
 
   
   return (
-        <div className='bg-[#1E1D22]'>
-             <div className='bg-[#1E1D22] flex justify-center text-white items-center gap-[48px] py-6'>
-              <Link href={'/about'}>About</Link>
-              <Link href={'/classlist'}>Class list</Link>
-              <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
-              <Link href={'/'}>Gallery</Link>
-              <Link href={'/'}>Trivia</Link>
-            </div>
+        <div className='bg-[#1E1D22] h-auto w-[100vw]'>
+          <TheHeader/>
+          <div>
+
             <div className='flex flex-col items-center text-white'>
 
             <Image src={maleemoji} alt='ggh'/>
                 <h1 className='font-Inter font-bold text-4xl text-white'>Get to know us for we </h1>
-                <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
+                <p className='text-justify align-middle px-5'>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
                 
-            <div className='flex gap-2 invisible sm:visible'>
+            <div className='flex gap-2 invisible md:visible'>
           {
         ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'].map((item)=>(
           <button
@@ -60,22 +57,22 @@ const Classlist = () => {
           }
         </div>
         <p className='search-text'>showing results for letter “A”</p>
-            <div className='gallery'>
-                {
-                  gallery.slice(page*10-10, page*10-1).map((item)=>(
-                    <div className='h-[280px] w-[250px]' key={item.id}>
-                    <Image   src={item.image}  alt=''/>
-                    <div className='bg-white text-black flex flex-col items-center'>
-                        <h3 className='font-bold font-Inter'>name</h3>
-                        <p className='italic font-thin'>Nickname</p>
-                    </div>
-                </div>
+        <div className='gallery'>
+        {
+          gallery.slice(page*10-10, page*10-1).map((item)=>(
+            <div className='h-[280px] w-[250px]' key={item.id}>
+            <Image   src={item.image}  alt=''/>
+            <div className='bg-white text-black flex flex-col items-center'>
+            <h3 className='font-bold font-Inter'>name</h3>
+            <p className='italic font-thin'>Nickname</p>
+            </div>
+            </div>
                   ))
                 }
             </div>
             {
               gallery.length > 0 && <div className='flex gap-2'>
-                {
+              {
                   [...Array(gallery.length/10)].map((_,i)=>{
 
                     return <span className={page === i+1 ? "navigate-button__selected": "navigate-button"} key={i} onClick={()=> setPagehandler(i+1)}>{i+1}</span>
@@ -86,6 +83,7 @@ const Classlist = () => {
             }
       
             </div>
+                </div>
 
             <Footer/>
         </div>
