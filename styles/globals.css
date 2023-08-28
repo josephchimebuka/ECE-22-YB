@@ -6,6 +6,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font: inter;
 }
 .slanted-bg{
   position: absolute;
@@ -278,6 +279,16 @@
   .border:hover{
     border: 1px solid white;
   }
+.border-profile{
+  border: 1px solid black;
+  background: white;
+  color: black;
+  margin-bottom: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  
+}
 
   .input-container {
     position: relative;
@@ -339,4 +350,9 @@
   .fadeInText2 {
     opacity: 0;
     transition: opacity 0.9s ease-in-out, transform 0.9s ease-in-out; /* Add transform transition */
+  }
+  .image-body{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }

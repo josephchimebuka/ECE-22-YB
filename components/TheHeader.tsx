@@ -10,7 +10,7 @@ const TheHeader = () => {
   return (
     <div>
  <div className='bg-[#1E1D22]  py-6'>
-   <div className='invisible sm:visible flex justify-center text-white items-center gap-[48px]'>
+   <div className='invisible sm:visible flex justify-center text-white items-center gap-[54px]'>
    <Link href={'/about'}>About</Link>
     <Link href={'/classlist'}>Class list</Link>
     <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>

@@ -86,7 +86,7 @@ const Home: React.FC<HomeProps> =()=> {
   return (
     //Landing page
     <div>
-          <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full'>
+          <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full mb-6'>
               <TheHeader/>
             <div className='bg-black h-[90vh] relative overflow-hidden'>
               <div className="slanted-bg"></div>
@@ -125,7 +125,7 @@ const Home: React.FC<HomeProps> =()=> {
                 <Image className='images' src={slider15} alt=''/>
               </div>
               <div className='text-container  items-center gap-10'>
-                <h1 className='md:text-5xl text-4xl  flex flex-col md:flex-row items-center gap-5 md:leading-5 font-bold leading-1 text-white font-Inter leading-4'><p>Graduating</p> <p> ClassYear book!</p></h1>
+                <h1 className='md:text-5xl text-4xl  flex flex-col md:flex-row items-center gap-5 md:leading-5 font-bold leading-1 text-white font-Inter leading-4'><p>Graduating</p> <p> ClassYearbook!</p></h1>
                 <h1 className='text-white font-times italic text-center text-3xl md:text-5xl mt-8  md:mt-4'>UNN ECE Class 2022</h1>
                 <div className='absolute z-20 flex items-center justify-center left-[35%] md:left-[40%] mt-20'>
                 <Image className='relative' color='white' src={Elipse} alt=''/>

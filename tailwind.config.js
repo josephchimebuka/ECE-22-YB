@@ -8,6 +8,12 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screen:{
+      sm: '480px',
+      md: '768px',
+      lg: '976px',
+      xl: '1440px'
+    },
     fontFamily:{
       times: ['Times New Roman', 'san-serif'],
       Inter: ['inter']

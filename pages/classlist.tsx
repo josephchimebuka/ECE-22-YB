@@ -42,7 +42,7 @@ const Classlist = () => {
             <div className='flex flex-col items-center text-white'>
 
             <Image src={maleemoji} alt='ggh'/>
-                <h1 className='font-Inter font-bold text-4xl text-white'>Get to know us for we </h1>
+                <h1 className='font-Inter font-bold md:text-4xl text-3xl text-white'>Get to know us for we </h1>
                 <p className='text-justify align-middle px-5'>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
                 
             <div className='flex gap-2 invisible md:visible'>
