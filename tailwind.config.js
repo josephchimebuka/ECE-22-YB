@@ -9,7 +9,8 @@ module.exports = {
   ],
   theme: {
     fontFamily:{
-      times: ['Times New Roman', 'san-serif']
+      times: ['Times New Roman', 'san-serif'],
+      Inter: ['inter']
     },
     extend: {},
   },

@@ -8,8 +8,10 @@ import Arinze from '../assets/fre 1 (1).jpg'
 import Mbachi from '../assets/fre 1 (2).jpg'
 import Ebuka from '../assets/fre 1 (3).jpg'
 import TheHeader from '../components/TheHeader'
+import { useRouter } from 'next/router'
 
 const Classlist = () => {
+  const router =useRouter()
   const[page, setpage] = useState(1)
   const gallery=[{id:1, image: Arinze},{id:2, image: Arinze},{id:3, image:Arinze},{id:4, image: Arinze},{id:5, image: Arinze},
     {id:6, image: Arinze},{id:7, image: Arinze}, {id:8, image: Arinze},{id:9, image: Arinze},
@@ -33,7 +35,7 @@ const Classlist = () => {
 
   
   return (
-        <div className='bg-[#1E1D22] h-auto w-[100vw]'>
+        <div className='bg-[#1E1D22] h-auto w-[100vw] overflow-hidden'>
           <TheHeader/>
           <div>
 
@@ -61,11 +63,15 @@ const Classlist = () => {
         {
           gallery.slice(page*10-10, page*10-1).map((item)=>(
             <div className='h-[280px] w-[250px]' key={item.id}>
+            <Link href={`/profile/${item.image}`} legacyBehavior>
+            <a>
             <Image   src={item.image}  alt=''/>
             <div className='bg-white text-black flex flex-col items-center'>
             <h3 className='font-bold font-Inter'>name</h3>
             <p className='italic font-thin'>Nickname</p>
-            </div>
+            </div></a>
+            </Link>
+           
             </div>
                   ))
                 }

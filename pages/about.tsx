@@ -69,7 +69,7 @@ const About = () => {
             <div className='fadeInText' ref={textRef} >
 
              <div className='flex flex-col items-center md:py-10 md:gap-10 p-10'>
-             <p className='font-Inter text-white text-3xl  md:text-[46px] items-center font-bold leading-10 mb-5 text-center fadeInText' ref={textRef}>It all began on October the 12th, 2017 when UNN released her 2017/18 Merit Admission list...</p>
+             <p className='font-Inter text-white text-3xl  md:text-[46px] items-center font-bold leading-10 mb-5 text-center fadeInText'>It all began on October the 12th, 2017 when UNN released her 2017/18 Merit Admission list...</p>
               <p className='font-Inter font-normal text-[16px]  text-white mb-5 text-justify align-middle'>Smart guys like Ame, Obiechina, Ifesinachi, Lawrence , etc were topping the list that year.... God when?  </p>
               <Image src={List} alt=''/>
               <p className='font-Inter text-white text-3xl md:text-[46px] items-center font-bold leading-10 mb-5'>Then the battle began ...</p>
