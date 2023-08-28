@@ -28,8 +28,8 @@ import Ebuka from '../assets/fre 1 (3).jpg'
 import QuoteCard from '../components/QuoteCard'
 import Ourstory from '../components/Ourstory'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Scrollbar, A11y } from 'swiper/modules';
 import Footer from '../components/Footer'
+import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -44,6 +44,8 @@ interface HomeProps{
 }
 
 const Home: React.FC<HomeProps> =()=> {
+
+SwiperCore.use([Navigation, Pagination, Autoplay]);
   const textRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -140,7 +142,7 @@ const Home: React.FC<HomeProps> =()=> {
           <section className='bg-[#1E1D22] fadeInText' ref={textRef}>
             <div className='flex flex-col items-center gap-[20px] py-10 leading-1 px-10' ref={textRef}>
             <h1 className='text-center font-Inter text-4xl font-extrabold text-white'>Things dey sup...</h1>
-            <p className='text-justify text-[18px] font-Inter px-10 md:w-2/3  text-white'>This digital yearbook is meticulously crafted
+            <p className='text-justify text-[18px] font-Inter md:w-2/3  text-white'>This digital yearbook is meticulously crafted
              to reflect the spirit and diversity of our class. Flip through its virtual pages to relive the highlights 
              of our UNN days, from the first day we nervously stepped through Peace park Nsukka 
             to the unforgettable adventures we embarked upon.</p>
@@ -174,8 +176,17 @@ const Home: React.FC<HomeProps> =()=> {
            
          <div className='max-w-full mt-12 lg:mt-8 mx-auto relative lg:pb-2'>
          <Swiper
-     spaceBetween={10}
-     slidesPerView={5}
+          spaceBetween={10}
+          breakpoints={{
+      // When window width is >= 640px
+      640: {
+        slidesPerView: 2,
+      },
+      // When window width is >= 1280px
+      1280: {
+        slidesPerView: 5,
+      },
+    }}
      navigation={{prevEl: '.swiper-button-prev' , nextEl: '.swiper-button-next'}}
      pagination={{ clickable: true }}
      onSwiper={(swiper) => console.log(swiper)}

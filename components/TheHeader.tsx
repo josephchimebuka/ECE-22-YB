@@ -14,7 +14,7 @@ const TheHeader = () => {
    <Link href={'/about'}>About</Link>
     <Link href={'/classlist'}>Class list</Link>
     <Link href={'/'} className='text-2xl font-bold italic font-times'>ECE 022</Link>
-    <Link href={'/'}>Gallery</Link>
+    <Link href={'/profile'}>Gallery</Link>
     <Link href={'/'}>Trivia</Link>
    </div>
    
@@ -46,7 +46,7 @@ const TheHeader = () => {
             <Link legacyBehavior href={"/classlist"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">Classlist</a>
             </Link>
-            <Link legacyBehavior href={"/gallery"}>
+            <Link legacyBehavior href={"/profile"}>
                 <a className="mt-10 font-Inter text-[16px] text-white font-bold opacity-[0.5]">Gallery</a>
             </Link>
             <Link legacyBehavior href={"/trivia"}>

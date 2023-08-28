@@ -4,17 +4,21 @@ import Image from 'next/image'
 import Mbachi from '../assets/WEB ASSETS-20230806T213952Z-001/WEB ASSETS/image 16.png'
 import Link from 'next/link'
 import Footer from '../components/Footer'
+import {CiFacebook} from 'react-icons/ci'
+import {FaLinkedin,} from 'react-icons/fa'
+import {FiInstagram} from 'react-icons/fi'
+import {PiCaretDownBold} from 'react-icons/pi'
 
 const profile = () => {
   return (
     <div>
       <TheHeader/>
-      <div className='flex flex-col'>
+      <div className='flex flex-col overflow-x-hidden'>
 
       <div className='bg-[rgb(30,29,34)] text px-10 md:px-[400px] md:relative'>
-        <h2 className='text-4xl text-white'>Joseph Chimebuka <span className='ml-10 text-[#8A8A8A] text-[20px]'>v</span></h2>
+        <h2 className='text-4xl text-white'>Joseph Chimebuka <span className='ml-10 text-[#8A8A8A] text-[20px] float-right cursor-pointer'><PiCaretDownBold/></span></h2>
         <h4 className='text-[#8A8A8A] text-[20px] italic'>Jojo </h4>
-        <div className='text-white'>Icons</div>
+        <div className='text-white flex text-[20px] gap-2 py-3'><CiFacebook/> <FaLinkedin/>  <FiInstagram/></div>
       </div>
       <div className='md:flex md:justify-between'>
         <div className='w-100vw h-[364px] md:w-[278px] md:h-[363px] md:absolute top-[150px] left-[100px]'>
@@ -60,7 +64,7 @@ const profile = () => {
           <p className='font-Inter text-[#9A9A9A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores qui eligendi rerum, reiciendis harum fugiat ipsam nostrum dolore! Magnam et dolorum quis 
             voluptatum consequuntur facilis iste distinctio accusantium eaque excepturi!</p>
         </div>
-      <div className='w-100vw h-[364px] align-middle p-5 overflow-x-hidden'>
+      <div className='flex items-center justify-center align-middle p-5 mx-auto'>
         <iframe
           className='md:w-[800px] md:mx-auto'
           width="560"
