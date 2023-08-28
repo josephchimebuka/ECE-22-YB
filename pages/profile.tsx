@@ -13,7 +13,7 @@ const profile = () => {
   return (
     <div>
       <TheHeader/>
-      <div className='flex flex-col overflow-x-hidden'>
+      <div className='flex flex-col'>
 
       <div className='bg-[rgb(30,29,34)] text px-10 md:px-[400px] md:relative'>
         <h2 className='text-4xl text-white'>Joseph Chimebuka <span className='ml-10 text-[#8A8A8A] text-[20px] float-right cursor-pointer'><PiCaretDownBold/></span></h2>
