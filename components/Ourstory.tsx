@@ -34,8 +34,8 @@ const Ourstory = () => {
     <div>
     <section>
      
-        <div className='flex flex-col items-center gap-8 pt-2 ' >
-        <p className='fadeInText' ref={textRef}></p>
+        <div className='flex flex-col items-center gap-8 pt-2 fadeInText' ref={textRef} >
+        
           <Image src={head} alt=''/>
         <h1 className='text-[#4d4d4d] font-times font-bold leading-10 text-4xl italic'>Our story choke oo</h1>
         <p className='font-Inter font-normal text-[16px] text-color px-10 md:w-2/3 leading-10'>This page serves as a testament to our shared experiences, the bonds weve forged, and the friendships that will endure beyond these hallowed halls. <br/>
