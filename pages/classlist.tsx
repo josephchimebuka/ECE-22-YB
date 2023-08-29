@@ -63,7 +63,7 @@ const Classlist = () => {
         {
           gallery.slice(page*10-10, page*10-1).map((item)=>(
             <div className='h-[280px] w-[250px]' key={item.id}>
-            <Link href={`/profile/${item.image}`} legacyBehavior>
+            <Link href='/profile' legacyBehavior>
             <a>
             <Image   src={item.image}  alt=''/>
             <div className='bg-white text-black flex flex-col items-center'>
