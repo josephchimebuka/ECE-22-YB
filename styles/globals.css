@@ -334,7 +334,7 @@ body{
     position: absolute;
     left: 0;
     bottom: -5px; /* Adjust this value for the desired distance from the input/button */
-    width: calc(100% + 24px); /* Adjust this value to extend the line */
+    width: calc(100% + 12px); /* Adjust this value to extend the line */
     border-bottom: 1px solid #D2D2D2; /* White line beneath the input/button */
     z-index: -1;
   }
@@ -345,7 +345,7 @@ body{
     position: absolute;
     left: 0;
     bottom: -5px; /* Same value as .input-container::after */
-    width: calc(100% + 24px); /* Same value as .input-container::after */
+    width: calc(100% + 12px); /* Same value as .input-container::after */
     border-bottom: none;
   }
   
