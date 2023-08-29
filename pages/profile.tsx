@@ -11,7 +11,7 @@ import {PiCaretDownBold} from 'react-icons/pi'
 
 const profile = () => {
   return (
-    <div>
+    <div className='w-auto md:h-[100%] overflow-hidden'>
       <TheHeader/>
       <div className='flex flex-col'>
 
@@ -58,7 +58,7 @@ const profile = () => {
           
         </div>
       </div>
-      <div className='md:relative md:top-[350px]'>
+      <div className='md:absolute md:top-[600px] md:h-auto'>
       <div className='hidden md:block mt-5 px-24'>
           <h1 className='font-Inter font-bold text-3xl'>Can we meet you??</h1>
           <p className='font-Inter text-[#9A9A9A]'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores qui eligendi rerum, reiciendis harum fugiat ipsam nostrum dolore! Magnam et dolorum quis 

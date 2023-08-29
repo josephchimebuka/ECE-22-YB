@@ -2,12 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 *{
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   font: inter;
 }
+body{
+  font-family: 'Inter', sans-serif;
+}
+
+
 .slanted-bg{
   position: absolute;
   top: 0;

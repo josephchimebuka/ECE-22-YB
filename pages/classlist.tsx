@@ -35,14 +35,14 @@ const Classlist = () => {
 
   
   return (
-        <div className='bg-[#1E1D22] h-auto w-[100vw] overflow-hidden'>
+        <div className='bg-[#1E1D22] h-auto w-[100vw] md:w-auto md:overflow-hidden overflow-hidden'>
           <TheHeader/>
           <div>
 
             <div className='flex flex-col items-center text-white'>
 
             <Image src={maleemoji} alt='ggh'/>
-                <h1 className='font-Inter font-bold md:text-4xl text-3xl text-white'>Get to know us for we </h1>
+                <h1 className='font-Inter font-bold md:text-4xl text-2xl text-white'>Get to know us for we </h1>
                 <p className='text-justify align-middle px-5'>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
                 
             <div className='flex gap-2 invisible md:visible'>

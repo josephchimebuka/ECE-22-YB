@@ -88,7 +88,7 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
   return (
     //Landing page
     <div>
-          <div className='h-screen md:h-[calc(100vh_+_68px)] min-w-full mb-6'>
+          <div className=' md:h-[calc(100vh_+_68px)] h-auto w-[100vw] md:w-auto overflow-hidden mb-6'>
               <TheHeader/>
             <div className='bg-black h-[90vh] relative overflow-hidden'>
               <div className="slanted-bg"></div>
@@ -166,21 +166,21 @@ SwiperCore.use([Navigation, Pagination, Autoplay]);
             </div>
             
                 <Image src={maleemoji} alt=''/>
-                <h1 className='font-Inter font-bold text-4xl'>Get to know us for we </h1>
-           <span className='font-Inter text-xl font-normal'>But first, we give honour to whom it is due, meet with our Distinguished classrep and his babe 🤣...</span>
-              <div className='flex gap-10 mt-10'>
+                <h1 className='font-Inter font-bold text-2xl md:text-4xl'>Get to know us for we </h1>
+           <span className='font-Inter text-sm px-3 md:text-xl font-normal'>But first, we give honour to whom it is due, meet with our Distinguished classrep and his babe 🤣...</span>
+              <div className='flex flex-col md:flex-row md:gap-10 mt-10'>
               <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
               <Listcards image={Arinze} name='Arinze' nickname={'001'}/> 
               </div>
-              <p>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
+              <p className='font-Inter text-sm px-3 md:text-xl font-normal'>‘Watch your back!!!!!.... This is our class attendance list... arranged in alphabetical order not based on CGPA</p>
            
-         <div className='max-w-full mt-12 lg:mt-8 mx-auto relative lg:pb-2'>
+         <div className='max-w-full mt-12 lg:mt-8 mx-auto relative lg:pb-2 flex justify-center items-center'>
          <Swiper
           spaceBetween={10}
           breakpoints={{
       // When window width is >= 640px
       640: {
-        slidesPerView: 2,
+        slidesPerView: 1.5,
       },
       // When window width is >= 1280px
       1280: {
